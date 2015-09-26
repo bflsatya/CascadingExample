@@ -1,7 +1,6 @@
 package com.company;
 
 import cascading.flow.Flow;
-import cascading.flow.FlowConnector;
 import cascading.flow.FlowDef;
 import cascading.flow.hadoop2.Hadoop2MR1FlowConnector;
 import cascading.operation.DebugLevel;
@@ -20,7 +19,7 @@ import cascading.tuple.Fields;
 import java.util.Properties;
 
 
-public class Main {
+public class CascadeClient {
 
     public static void main(String[] args) {
         Scheme schIn2 = new TextDelimited(new Fields("id_2", "oddeven_2", "name"), ",");
@@ -37,7 +36,7 @@ public class Main {
         flowDef.setDebugLevel( DebugLevel.VERBOSE );
 
         Properties properties = new Properties();
-        AppProps.setApplicationJarClass(properties,Main.class);
+        AppProps.setApplicationJarClass(properties,CascadeClient.class);
         Hadoop2MR1FlowConnector flowConnector = new Hadoop2MR1FlowConnector(properties);
 
         Flow flow = flowConnector.connect(flowDef);

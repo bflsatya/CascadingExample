@@ -69,7 +69,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>cascadClient</mainClass>
+                            <mainClass>CascadeClient</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
